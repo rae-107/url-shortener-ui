@@ -9,11 +9,10 @@ const App = () => {
 
   useEffect(() => {
     getUrls().then((data) => setUrls(data.urls));
-  }, [urls]);
+  }, []);
 
   const addNewUrl = (newUrl) => {
-    postUrls(newUrl);
-    setUrls([...urls, newUrl]);
+    postUrls(newUrl).then(res => res.json()).then(data => setUrls([...urls, data]))
   };
 
   return (
@@ -22,7 +21,6 @@ const App = () => {
         <h1>URL Shortener</h1>
         <UrlForm addNewUrl={addNewUrl} />
       </header>
-
       <UrlContainer urls={urls} />
     </main>
   );

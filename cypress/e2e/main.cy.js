@@ -1,6 +1,6 @@
 describe("Main Page", () => {
   beforeEach(() => {
-    cy.intercept("Get", "http://localhost:3001/api/v1/urls", {
+    cy.intercept("GET", "http://localhost:3001/api/v1/urls", {
       fixture: "url.json",
     });
     cy.visit("http://localhost:3000/");

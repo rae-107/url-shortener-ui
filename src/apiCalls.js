@@ -9,6 +9,6 @@ export const postUrls = (newUrl) => {
     headers: {
       "Content-Type": "application/json"
     },
-    body: (newUrl)
+    body: JSON.stringify(newUrl)
   })
 }

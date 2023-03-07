@@ -13,7 +13,6 @@ const App = () => {
 
   const addNewUrl = (newUrl) => {
     postUrls(newUrl);
-    getUrls();
     setUrls([...urls, newUrl]);
   };
 
